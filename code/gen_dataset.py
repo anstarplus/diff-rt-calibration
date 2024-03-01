@@ -35,7 +35,7 @@ parser.add_argument('-scene_name', type=str, help='Sionna scene to use for ray t
                     default="inue_simple")
 #
 parser.add_argument('-num_samples', type=int, help='Number of samples used for tracing',
-                    default=int(4e6))
+                    default=int(1e3))
 #
 parser.add_argument('-max_depth', type=int, help='Maximum depth used for tracing',
                     default=5)
@@ -70,7 +70,7 @@ args = parser.parse_args()
 gpu_num = args.gpu_num
 # Tensorflow seed
 seed = args.seed
-# Name of the dataset of measurments
+# Name of the dataset of measurements
 meas_ds = args.meas_ds
 # Sionna scene to use for ray tracing
 scene_name = args.scene_name
@@ -124,11 +124,12 @@ tf.random.set_seed(seed)
 import sys
 sys.path.append('../../..')
 sys.path.append('../code')
+sys.path.append('../../sionna')
 
 # import sionna
 from utils import *
 import json
-
+from tqdm import tqdm
 
 ###########################################
 # Setup the scene
@@ -166,9 +167,12 @@ file_writer = tf.io.TFRecordWriter(traced_paths_raw_dataset_datafile)
 # Keep track of the max_num_paths
 max_num_paths_spec = -1
 max_num_paths_diff = -1
-max_num_paths_scat = -1
-for it_num in range(traced_paths_dataset_size):
-
+max_num_paths_scat = -15
+max_num_paths_refract = -1
+# tqdm progress bar
+print(f"Generating the raw dataset of traced paths for {traced_paths_dataset}...")
+# for it_num in range(traced_paths_dataset_size):
+for it_num in tqdm(range(traced_paths_dataset_size), total=traced_paths_dataset_size):
     # Retrieve the next item
     # `None` is returned if the iterator is exhausted
     next_item = next(data_iter, None)
@@ -191,12 +195,15 @@ for it_num in range(traced_paths_dataset_size):
                                      edge_diffraction=edge_diffraction,
                                      scattering=scattering,
                                      scat_keep_prob=scat_keep_prob,
+                                     refraction = True,
                                      check_scene=False)
 
     # Update max_num_paths
     num_paths_spec = traced_paths[0].objects.shape[-1]
     num_paths_diff = traced_paths[1].objects.shape[-1]
     num_paths_scat = traced_paths[2].objects.shape[-1]
+    num_paths_refract = traced_paths[6].objects.shape[-1]
+    print("refraction:", num_paths_refract)
 
     if num_paths_spec > max_num_paths_spec:
         max_num_paths_spec = num_paths_spec
@@ -204,7 +211,8 @@ for it_num in range(traced_paths_dataset_size):
         max_num_paths_diff = num_paths_diff
     if num_paths_scat > max_num_paths_scat:
         max_num_paths_scat = num_paths_scat
-
+    if num_paths_refract > max_num_paths_refract:
+        max_num_paths_refract = num_paths_refract
     # Reshape the channel measurement
     h_meas = reshape_h_meas(h_meas_raw)
 
@@ -215,9 +223,9 @@ for it_num in range(traced_paths_dataset_size):
     file_writer.write(record_bytes)
 
     # Print progress
-    progress_message = f"\rProgress: {it_num+1}/{traced_paths_dataset_size}"
-    progress_message = progress_message.ljust(line_length)
-    print(progress_message, end="")
+    # progress_message = f"\rProgress: {it_num+1}/{traced_paths_dataset_size}"
+    # progress_message = progress_message.ljust(line_length)
+    # print(progress_message, end="")
 
 file_writer.close()
 print("")
