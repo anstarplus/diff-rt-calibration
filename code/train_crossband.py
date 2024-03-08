@@ -21,26 +21,26 @@ import datetime # For logging
 import json
 
 training_name = "neural_materials"
-dataset_name = '../data/traced_paths/dichasus-dc01'
+dataset_name = '/scratch/network/za1320/dataset/dichasus-dc01'
 dataset_filename = os.path.join(dataset_name + '.tfrecords')
 params_filename = os.path.join(dataset_name + '.json')
 
 # Configure training parameters and step
-batch_size = 4
+batch_size = 16
 learning_rate = 1e-3
-num_iterations = 10
+num_iterations = 2000
 delta = 0.999 # Parameter for exponential moving average
 
 # Size of validation set size
 # The validation set is used for early stopping, to ensure
 # training does not overfit.
-validation_set_size = 80
+validation_set_size = 100
 # We don't use the test set here, but need is size for splitting
-test_set_size = 20
+test_set_size = 900
 # Sizes of the positional encoding to evaluate
 position_encoding_size = 10
 # Sizes of the training set to evaluate
-training_set_size = 100
+training_set_size = 2000
 
 with open(params_filename, 'r') as openfile:
     params = json.load(openfile)
@@ -86,10 +86,11 @@ def train():
 
     # Setting up tensorboard
     current_time = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
-    train_log_dir = os.path.join('../tb_logs/', training_name, current_time)
+    train_log_dir = os.path.join('/scratch/network/za1320/exp/tb_logs/', training_name, current_time)
     train_summary_writer = tf.summary.create_file_writer(train_log_dir)
     # Checkpoint
-    weights_filename = os.path.join('../checkpoints/', training_name)
+    # weights_filename = os.path.join('../checkpoints/', training_name)
+    weights_filename = os.path.join(train_log_dir, training_name)
 
     scene.radio_material_callable = NeuralMaterials(scene, pos_encoding_size=position_encoding_size, learn_scattering=True)
 
@@ -195,7 +196,7 @@ def train():
         loss_ds_pow, loss_ds, loss_pow, scaling_factor = tr_quantities
 
         # Logging
-        if (step % 1) == 0:
+        if (step % 10) == 0:
             with train_summary_writer.as_default():
                 # Log in TB
                 tf.summary.scalar('loss_ds_pow_training', loss_ds_pow.numpy(), step=step)
@@ -204,9 +205,10 @@ def train():
                 tf.summary.scalar('scaling_factor', scaling_factor.numpy(), step=step)
                 # Save model
                 save_model(scene.radio_material_callable, weights_filename, scaling_factor=scaling_factor.numpy())
+                print('save model')
 
         # Evaluate periodically on the evaluation set
-        if ((step+1) % 10) == 0:
+        if ((step+1) % 1000) == 0:
             print('evaluate')
             eval_loss_ds = 0.0
             eval_loss_pow = 0.0
@@ -238,6 +240,7 @@ def train():
 
     # Save model
     save_model(scene.radio_material_callable, weights_filename, scaling_factor=scaling_factor.numpy())
+    print('save model')
 
 if __name__ == '__main__':
     train()

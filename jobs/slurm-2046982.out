@@ -1,0 +1,218 @@
+2024-03-08 10:03:56.006034: I tensorflow/core/util/port.cc:110] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2024-03-08 10:03:56.041508: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: SSE4.1 SSE4.2 AVX AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2024-03-08 10:04:01.639380: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1635] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 38522 MB memory:  -> device: 0, name: NVIDIA A100-PCIE-40GB, pci bus id: 0000:17:00.0, compute capability: 8.0
+2024-03-08 10:04:02.070594: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'Placeholder/_0' with dtype string and shape [1]
+	 [[{{node Placeholder/_0}}]]
+2024-03-08 10:04:02.070821: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'Placeholder/_0' with dtype string and shape [1]
+	 [[{{node Placeholder/_0}}]]
+2024-03-08 10:04:02.119140: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'Placeholder/_0' with dtype string and shape [1]
+	 [[{{node Placeholder/_0}}]]
+2024-03-08 10:04:02.119355: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'Placeholder/_0' with dtype string and shape [1]
+	 [[{{node Placeholder/_0}}]]
+  0%|          | 0/2000 [00:00<?, ?it/s]2024-03-08 10:04:04.487071: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_1/Fill/dims/strided_slice_31' with dtype int32
+	 [[{{node cond_1/Fill/dims/strided_slice_31}}]]
+2024-03-08 10:04:04.489446: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_1/Fill/dims/strided_slice_31' with dtype int32
+	 [[{{node cond_1/Fill/dims/strided_slice_31}}]]
+2024-03-08 10:04:04.491887: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_1/Fill/dims/strided_slice_31' with dtype int32
+	 [[{{node cond_1/Fill/dims/strided_slice_31}}]]
+2024-03-08 10:04:04.515225: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_3/Fill/dims/strided_slice_32' with dtype int32
+	 [[{{node cond_3/Fill/dims/strided_slice_32}}]]
+2024-03-08 10:04:04.517484: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_3/Fill/dims/strided_slice_32' with dtype int32
+	 [[{{node cond_3/Fill/dims/strided_slice_32}}]]
+2024-03-08 10:04:04.519887: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_3/Fill/dims/strided_slice_32' with dtype int32
+	 [[{{node cond_3/Fill/dims/strided_slice_32}}]]
+2024-03-08 10:04:04.543928: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_5/Fill/dims/strided_slice_33' with dtype int32
+	 [[{{node cond_5/Fill/dims/strided_slice_33}}]]
+2024-03-08 10:04:04.546169: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_5/Fill/dims/strided_slice_33' with dtype int32
+	 [[{{node cond_5/Fill/dims/strided_slice_33}}]]
+2024-03-08 10:04:04.548531: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_5/Fill/dims/strided_slice_33' with dtype int32
+	 [[{{node cond_5/Fill/dims/strided_slice_33}}]]
+2024-03-08 10:04:04.571813: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_7/Fill/dims/strided_slice_34' with dtype int32
+	 [[{{node cond_7/Fill/dims/strided_slice_34}}]]
+2024-03-08 10:04:04.574081: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_7/Fill/dims/strided_slice_34' with dtype int32
+	 [[{{node cond_7/Fill/dims/strided_slice_34}}]]
+2024-03-08 10:04:04.576428: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_7/Fill/dims/strided_slice_34' with dtype int32
+	 [[{{node cond_7/Fill/dims/strided_slice_34}}]]
+2024-03-08 10:04:04.599670: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_9/Fill/dims/strided_slice_35' with dtype int32
+	 [[{{node cond_9/Fill/dims/strided_slice_35}}]]
+2024-03-08 10:04:04.601889: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_9/Fill/dims/strided_slice_35' with dtype int32
+	 [[{{node cond_9/Fill/dims/strided_slice_35}}]]
+2024-03-08 10:04:04.604253: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_9/Fill/dims/strided_slice_35' with dtype int32
+	 [[{{node cond_9/Fill/dims/strided_slice_35}}]]
+2024-03-08 10:04:04.627537: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_11/Fill/dims/strided_slice_36' with dtype int32
+	 [[{{node cond_11/Fill/dims/strided_slice_36}}]]
+2024-03-08 10:04:04.629793: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_11/Fill/dims/strided_slice_36' with dtype int32
+	 [[{{node cond_11/Fill/dims/strided_slice_36}}]]
+2024-03-08 10:04:04.632151: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_11/Fill/dims/strided_slice_36' with dtype int32
+	 [[{{node cond_11/Fill/dims/strided_slice_36}}]]
+2024-03-08 10:04:04.655131: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_13/Fill/dims/strided_slice_37' with dtype int32
+	 [[{{node cond_13/Fill/dims/strided_slice_37}}]]
+2024-03-08 10:04:04.657386: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_13/Fill/dims/strided_slice_37' with dtype int32
+	 [[{{node cond_13/Fill/dims/strided_slice_37}}]]
+2024-03-08 10:04:04.659814: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_13/Fill/dims/strided_slice_37' with dtype int32
+	 [[{{node cond_13/Fill/dims/strided_slice_37}}]]
+2024-03-08 10:04:04.683395: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_15/Fill/dims/strided_slice_38' with dtype int32
+	 [[{{node cond_15/Fill/dims/strided_slice_38}}]]
+2024-03-08 10:04:04.685650: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_15/Fill/dims/strided_slice_38' with dtype int32
+	 [[{{node cond_15/Fill/dims/strided_slice_38}}]]
+2024-03-08 10:04:04.688005: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_15/Fill/dims/strided_slice_38' with dtype int32
+	 [[{{node cond_15/Fill/dims/strided_slice_38}}]]
+2024-03-08 10:04:04.711209: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_17/Fill/dims/strided_slice_39' with dtype int32
+	 [[{{node cond_17/Fill/dims/strided_slice_39}}]]
+2024-03-08 10:04:04.713449: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_17/Fill/dims/strided_slice_39' with dtype int32
+	 [[{{node cond_17/Fill/dims/strided_slice_39}}]]
+2024-03-08 10:04:04.715793: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_17/Fill/dims/strided_slice_39' with dtype int32
+	 [[{{node cond_17/Fill/dims/strided_slice_39}}]]
+2024-03-08 10:04:04.739013: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_19/Fill/dims/strided_slice_40' with dtype int32
+	 [[{{node cond_19/Fill/dims/strided_slice_40}}]]
+2024-03-08 10:04:04.741321: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_19/Fill/dims/strided_slice_40' with dtype int32
+	 [[{{node cond_19/Fill/dims/strided_slice_40}}]]
+2024-03-08 10:04:04.743691: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_19/Fill/dims/strided_slice_40' with dtype int32
+	 [[{{node cond_19/Fill/dims/strided_slice_40}}]]
+2024-03-08 10:04:04.766894: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_21/Fill/dims/strided_slice_41' with dtype int32
+	 [[{{node cond_21/Fill/dims/strided_slice_41}}]]
+2024-03-08 10:04:04.769145: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_21/Fill/dims/strided_slice_41' with dtype int32
+	 [[{{node cond_21/Fill/dims/strided_slice_41}}]]
+2024-03-08 10:04:04.771450: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_21/Fill/dims/strided_slice_41' with dtype int32
+	 [[{{node cond_21/Fill/dims/strided_slice_41}}]]
+2024-03-08 10:04:04.795315: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_23/Fill/dims/strided_slice_42' with dtype int32
+	 [[{{node cond_23/Fill/dims/strided_slice_42}}]]
+2024-03-08 10:04:04.797566: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_23/Fill/dims/strided_slice_42' with dtype int32
+	 [[{{node cond_23/Fill/dims/strided_slice_42}}]]
+2024-03-08 10:04:04.799924: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_23/Fill/dims/strided_slice_42' with dtype int32
+	 [[{{node cond_23/Fill/dims/strided_slice_42}}]]
+2024-03-08 10:04:04.823197: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_25/Fill/dims/strided_slice_43' with dtype int32
+	 [[{{node cond_25/Fill/dims/strided_slice_43}}]]
+2024-03-08 10:04:04.825436: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_25/Fill/dims/strided_slice_43' with dtype int32
+	 [[{{node cond_25/Fill/dims/strided_slice_43}}]]
+2024-03-08 10:04:04.827798: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_25/Fill/dims/strided_slice_43' with dtype int32
+	 [[{{node cond_25/Fill/dims/strided_slice_43}}]]
+2024-03-08 10:04:04.851188: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_27/Fill/dims/strided_slice_44' with dtype int32
+	 [[{{node cond_27/Fill/dims/strided_slice_44}}]]
+2024-03-08 10:04:04.853443: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_27/Fill/dims/strided_slice_44' with dtype int32
+	 [[{{node cond_27/Fill/dims/strided_slice_44}}]]
+2024-03-08 10:04:04.855823: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_27/Fill/dims/strided_slice_44' with dtype int32
+	 [[{{node cond_27/Fill/dims/strided_slice_44}}]]
+2024-03-08 10:04:04.879188: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_29/Fill/dims/strided_slice_45' with dtype int32
+	 [[{{node cond_29/Fill/dims/strided_slice_45}}]]
+2024-03-08 10:04:04.881491: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_29/Fill/dims/strided_slice_45' with dtype int32
+	 [[{{node cond_29/Fill/dims/strided_slice_45}}]]
+2024-03-08 10:04:04.883822: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_29/Fill/dims/strided_slice_45' with dtype int32
+	 [[{{node cond_29/Fill/dims/strided_slice_45}}]]
+2024-03-08 10:04:14.906850: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_1/Fill/dims/strided_slice_31' with dtype int32
+	 [[{{node cond_1/Fill/dims/strided_slice_31}}]]
+2024-03-08 10:04:14.909697: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_1/Fill/dims/strided_slice_31' with dtype int32
+	 [[{{node cond_1/Fill/dims/strided_slice_31}}]]
+2024-03-08 10:04:14.911966: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_1/Fill/dims/strided_slice_31' with dtype int32
+	 [[{{node cond_1/Fill/dims/strided_slice_31}}]]
+2024-03-08 10:04:14.934729: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_3/Fill/dims/strided_slice_32' with dtype int32
+	 [[{{node cond_3/Fill/dims/strided_slice_32}}]]
+2024-03-08 10:04:14.936959: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_3/Fill/dims/strided_slice_32' with dtype int32
+	 [[{{node cond_3/Fill/dims/strided_slice_32}}]]
+2024-03-08 10:04:14.939150: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_3/Fill/dims/strided_slice_32' with dtype int32
+	 [[{{node cond_3/Fill/dims/strided_slice_32}}]]
+2024-03-08 10:04:14.961975: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_5/Fill/dims/strided_slice_33' with dtype int32
+	 [[{{node cond_5/Fill/dims/strided_slice_33}}]]
+2024-03-08 10:04:14.964230: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_5/Fill/dims/strided_slice_33' with dtype int32
+	 [[{{node cond_5/Fill/dims/strided_slice_33}}]]
+2024-03-08 10:04:14.966422: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_5/Fill/dims/strided_slice_33' with dtype int32
+	 [[{{node cond_5/Fill/dims/strided_slice_33}}]]
+2024-03-08 10:04:14.988989: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_7/Fill/dims/strided_slice_34' with dtype int32
+	 [[{{node cond_7/Fill/dims/strided_slice_34}}]]
+2024-03-08 10:04:14.991159: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_7/Fill/dims/strided_slice_34' with dtype int32
+	 [[{{node cond_7/Fill/dims/strided_slice_34}}]]
+2024-03-08 10:04:14.993337: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_7/Fill/dims/strided_slice_34' with dtype int32
+	 [[{{node cond_7/Fill/dims/strided_slice_34}}]]
+2024-03-08 10:04:15.016043: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_9/Fill/dims/strided_slice_35' with dtype int32
+	 [[{{node cond_9/Fill/dims/strided_slice_35}}]]
+2024-03-08 10:04:15.018275: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_9/Fill/dims/strided_slice_35' with dtype int32
+	 [[{{node cond_9/Fill/dims/strided_slice_35}}]]
+2024-03-08 10:04:15.020453: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_9/Fill/dims/strided_slice_35' with dtype int32
+	 [[{{node cond_9/Fill/dims/strided_slice_35}}]]
+2024-03-08 10:04:15.043210: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_11/Fill/dims/strided_slice_36' with dtype int32
+	 [[{{node cond_11/Fill/dims/strided_slice_36}}]]
+2024-03-08 10:04:15.045419: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_11/Fill/dims/strided_slice_36' with dtype int32
+	 [[{{node cond_11/Fill/dims/strided_slice_36}}]]
+2024-03-08 10:04:15.047639: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_11/Fill/dims/strided_slice_36' with dtype int32
+	 [[{{node cond_11/Fill/dims/strided_slice_36}}]]
+2024-03-08 10:04:15.069897: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_13/Fill/dims/strided_slice_37' with dtype int32
+	 [[{{node cond_13/Fill/dims/strided_slice_37}}]]
+2024-03-08 10:04:15.072084: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_13/Fill/dims/strided_slice_37' with dtype int32
+	 [[{{node cond_13/Fill/dims/strided_slice_37}}]]
+2024-03-08 10:04:15.074298: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_13/Fill/dims/strided_slice_37' with dtype int32
+	 [[{{node cond_13/Fill/dims/strided_slice_37}}]]
+2024-03-08 10:04:15.097746: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_15/Fill/dims/strided_slice_38' with dtype int32
+	 [[{{node cond_15/Fill/dims/strided_slice_38}}]]
+2024-03-08 10:04:15.099987: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_15/Fill/dims/strided_slice_38' with dtype int32
+	 [[{{node cond_15/Fill/dims/strided_slice_38}}]]
+2024-03-08 10:04:15.102207: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_15/Fill/dims/strided_slice_38' with dtype int32
+	 [[{{node cond_15/Fill/dims/strided_slice_38}}]]
+2024-03-08 10:04:15.124924: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_17/Fill/dims/strided_slice_39' with dtype int32
+	 [[{{node cond_17/Fill/dims/strided_slice_39}}]]
+2024-03-08 10:04:15.127119: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_17/Fill/dims/strided_slice_39' with dtype int32
+	 [[{{node cond_17/Fill/dims/strided_slice_39}}]]
+2024-03-08 10:04:15.129324: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_17/Fill/dims/strided_slice_39' with dtype int32
+	 [[{{node cond_17/Fill/dims/strided_slice_39}}]]
+2024-03-08 10:04:15.152847: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_19/Fill/dims/strided_slice_40' with dtype int32
+	 [[{{node cond_19/Fill/dims/strided_slice_40}}]]
+2024-03-08 10:04:15.155112: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_19/Fill/dims/strided_slice_40' with dtype int32
+	 [[{{node cond_19/Fill/dims/strided_slice_40}}]]
+2024-03-08 10:04:15.157431: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_19/Fill/dims/strided_slice_40' with dtype int32
+	 [[{{node cond_19/Fill/dims/strided_slice_40}}]]
+2024-03-08 10:04:15.180625: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_21/Fill/dims/strided_slice_41' with dtype int32
+	 [[{{node cond_21/Fill/dims/strided_slice_41}}]]
+2024-03-08 10:04:15.182871: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_21/Fill/dims/strided_slice_41' with dtype int32
+	 [[{{node cond_21/Fill/dims/strided_slice_41}}]]
+2024-03-08 10:04:15.185083: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_21/Fill/dims/strided_slice_41' with dtype int32
+	 [[{{node cond_21/Fill/dims/strided_slice_41}}]]
+2024-03-08 10:04:15.208764: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_23/Fill/dims/strided_slice_42' with dtype int32
+	 [[{{node cond_23/Fill/dims/strided_slice_42}}]]
+2024-03-08 10:04:15.210984: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_23/Fill/dims/strided_slice_42' with dtype int32
+	 [[{{node cond_23/Fill/dims/strided_slice_42}}]]
+2024-03-08 10:04:15.213233: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_23/Fill/dims/strided_slice_42' with dtype int32
+	 [[{{node cond_23/Fill/dims/strided_slice_42}}]]
+2024-03-08 10:04:15.236346: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_25/Fill/dims/strided_slice_43' with dtype int32
+	 [[{{node cond_25/Fill/dims/strided_slice_43}}]]
+2024-03-08 10:04:15.238630: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_25/Fill/dims/strided_slice_43' with dtype int32
+	 [[{{node cond_25/Fill/dims/strided_slice_43}}]]
+2024-03-08 10:04:15.240839: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_25/Fill/dims/strided_slice_43' with dtype int32
+	 [[{{node cond_25/Fill/dims/strided_slice_43}}]]
+2024-03-08 10:04:15.264111: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_27/Fill/dims/strided_slice_44' with dtype int32
+	 [[{{node cond_27/Fill/dims/strided_slice_44}}]]
+2024-03-08 10:04:15.266361: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_27/Fill/dims/strided_slice_44' with dtype int32
+	 [[{{node cond_27/Fill/dims/strided_slice_44}}]]
+2024-03-08 10:04:15.268608: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_27/Fill/dims/strided_slice_44' with dtype int32
+	 [[{{node cond_27/Fill/dims/strided_slice_44}}]]
+2024-03-08 10:04:15.291839: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_29/Fill/dims/strided_slice_45' with dtype int32
+	 [[{{node cond_29/Fill/dims/strided_slice_45}}]]
+2024-03-08 10:04:15.294069: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_29/Fill/dims/strided_slice_45' with dtype int32
+	 [[{{node cond_29/Fill/dims/strided_slice_45}}]]
+2024-03-08 10:04:15.296320: I tensorflow/core/common_runtime/executor.cc:1197] [/device:CPU:0] (DEBUG INFO) Executor start aborting (this does not indicate an error and you can ignore this message): INVALID_ARGUMENT: You must feed a value for placeholder tensor 'cond_29/Fill/dims/strided_slice_45' with dtype int32
+	 [[{{node cond_29/Fill/dims/strided_slice_45}}]]
+2024-03-08 10:04:24.556382: I tensorflow/compiler/xla/stream_executor/cuda/cuda_blas.cc:637] TensorFloat-32 will be used for the matrix multiplication. This will only be logged once.
+2024-03-08 10:04:24.726381: I tensorflow/tsl/platform/default/subprocess.cc:304] Start cannot spawn child process: No such file or directory
+2024-03-08 10:04:25.373985: I tensorflow/compiler/xla/service/service.cc:169] XLA service 0x1463edfae0c0 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2024-03-08 10:04:25.374023: I tensorflow/compiler/xla/service/service.cc:177]   StreamExecutor device (0): NVIDIA A100-PCIE-40GB, Compute Capability 8.0
+2024-03-08 10:04:25.377343: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:269] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
+2024-03-08 10:04:25.389420: I tensorflow/compiler/xla/stream_executor/cuda/cuda_dnn.cc:424] Loaded cuDNN version 8902
+2024-03-08 10:04:25.460931: I ./tensorflow/compiler/jit/device_compiler.h:180] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+  0%|          | 1/2000 [00:23<13:06:45, 23.61s/it]  0%|          | 2/2000 [00:23<5:26:36,  9.81s/it]   0%|          | 3/2000 [00:23<2:59:31,  5.39s/it]  0%|          | 4/2000 [00:24<1:50:16,  3.32s/it]  0%|          | 5/2000 [00:24<1:12:04,  2.17s/it]  0%|          | 6/2000 [00:24<48:57,  1.47s/it]    0%|          | 7/2000 [00:24<34:15,  1.03s/it]  0%|          | 8/2000 [00:24<24:43,  1.34it/s]  0%|          | 9/2000 [00:24<18:10,  1.83it/s]  0%|          | 10/2000 [00:24<13:47,  2.40it/s]  1%|          | 11/2000 [00:24<10:56,  3.03it/s]  1%|          | 12/2000 [00:25<08:42,  3.80it/s]  1%|          | 13/2000 [00:25<07:18,  4.53it/s]  1%|          | 14/2000 [00:25<06:15,  5.29it/s]  1%|          | 15/2000 [00:25<05:33,  5.96it/s]  1%|          | 16/2000 [00:25<05:03,  6.54it/s]  1%|          | 17/2000 [00:25<04:45,  6.96it/s]  1%|          | 18/2000 [00:25<04:29,  7.35it/s]  1%|          | 19/2000 [00:25<04:20,  7.62it/s]  1%|          | 20/2000 [00:25<04:12,  7.83it/s]  1%|          | 21/2000 [00:26<04:14,  7.78it/s]  1%|          | 22/2000 [00:26<04:06,  8.01it/s]  1%|          | 23/2000 [00:26<04:00,  8.21it/s]  1%|          | 24/2000 [00:26<04:00,  8.23it/s]  1%|▏         | 25/2000 [00:26<03:58,  8.28it/s]  1%|▏         | 26/2000 [00:26<03:56,  8.35it/s]  1%|▏         | 27/2000 [00:26<03:53,  8.46it/s]  1%|▏         | 28/2000 [00:26<03:51,  8.51it/s]  1%|▏         | 29/2000 [00:27<03:49,  8.59it/s]  2%|▏         | 30/2000 [00:27<03:51,  8.50it/s]  2%|▏         | 31/2000 [00:27<03:57,  8.28it/s]  2%|▏         | 32/2000 [00:27<03:51,  8.49it/s]  2%|▏         | 33/2000 [00:27<03:51,  8.49it/s]  2%|▏         | 33/2000 [00:27<27:20,  1.20it/s]
+Traceback (most recent call last):
+  File "/home/za1320/Github/diff-rt-calibration/code/train_crossband.py", line 245, in <module>
+    train()
+  File "/home/za1320/Github/diff-rt-calibration/code/train_crossband.py", line 182, in train
+    next_item = next(training_set_iter, None)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/za1320/.conda/envs/tfanplus/lib/python3.11/site-packages/tensorflow/python/data/ops/iterator_ops.py", line 797, in __next__
+    return self._next_internal()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/za1320/.conda/envs/tfanplus/lib/python3.11/site-packages/tensorflow/python/data/ops/iterator_ops.py", line 780, in _next_internal
+    ret = gen_dataset_ops.iterator_get_next(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/za1320/.conda/envs/tfanplus/lib/python3.11/site-packages/tensorflow/python/ops/gen_dataset_ops.py", line 3016, in iterator_get_next
+    _ops.raise_from_not_ok_status(e, name)
+  File "/home/za1320/.conda/envs/tfanplus/lib/python3.11/site-packages/tensorflow/python/framework/ops.py", line 7262, in raise_from_not_ok_status
+    raise core._status_to_exception(e) from None  # pylint: disable=protected-access
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tensorflow.python.framework.errors_impl.InvalidArgumentError: {{function_node __wrapped__IteratorGetNext_output_types_95_device_/job:localhost/replica:0/task:0/device:CPU:0}} Cannot batch tensors with different shapes in component 3. First element had shape [64,65] and element 3 had shape [64,0]. [Op:IteratorGetNext]

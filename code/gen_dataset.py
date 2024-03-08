@@ -35,7 +35,7 @@ parser.add_argument('-scene_name', type=str, help='Sionna scene to use for ray t
                     default="inue_simple")
 #
 parser.add_argument('-num_samples', type=int, help='Number of samples used for tracing',
-                    default=int(1e4))
+                    default=int(4e6))
 #
 parser.add_argument('-max_depth', type=int, help='Maximum depth used for tracing',
                     default=3)
@@ -56,11 +56,11 @@ parser.add_argument('-scattering', help='Enables scattering when tracing', defau
 parser.add_argument('-no-scattering', action='store_false', dest='scattering')
 #
 parser.add_argument('-scat_keep_prob', type=float, help='Probability to keep a scattered paths when tracing',
-                    default=0.01)
+                    default=0.0001)
 parser.add_argument('-traced_paths_dataset', type=str, help='(Required) Filename of the dataset of traced paths to create',
                     default='dichasus-dc01', required=False)
 parser.add_argument('-traced_paths_dataset_size', type=int, help='(Required) Size of the dataset of traced paths',
-                    default=200, required=False)
+                    default=10000, required=False)
 parser.add_argument('-delete_raw_dataset', help='Deletes the raw (unpost-processed) dataset', default=False, action='store_true')
 parser.add_argument('-keep_raw_dataset', action='store_false', dest='delete_raw_dataset')
 
@@ -98,7 +98,8 @@ traced_paths_dataset_size = args.traced_paths_dataset_size
 # Delete the raw dataset once post-processed?
 delete_raw_dataset = args.delete_raw_dataset
 # Folder where to save the dataset
-traced_paths_dataset_folder = '../data/traced_paths'
+# traced_paths_dataset_folder = '../data/traced_paths'
+traced_paths_dataset_folder = '/scratch/network/za1320/dataset/'
 
 
 ###########################################
@@ -108,19 +109,21 @@ traced_paths_dataset_folder = '../data/traced_paths'
 import os
 import tensorflow as tf
 gpus = tf.config.list_physical_devices('GPU')
+print(gpus)
 if gpus:
     try:
         tf.config.experimental.set_memory_growth(gpus[0], True)
     except RuntimeError as e:
         print(e)
 tf.get_logger().setLevel('ERROR')
+tf.random.set_seed(42)
 
 # Set the seed
 tf.random.set_seed(seed)
 
 import sys
-sys.path.append('../../..')
-sys.path.append('../code')
+sys.path.append('../..')
+# sys.path.append('../code')
 sys.path.append('../../sionna')
 
 import sionna

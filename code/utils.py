@@ -128,8 +128,8 @@ def load_dataset(name, calibrate=True, y_filter=None):
         as well as positions of shape [batch_size, 3].
     """
 
-    raw_dataset = tf.data.TFRecordDataset(["../data/tfrecords/" + name + ".tfrecords"])
-
+    # raw_dataset = tf.data.TFRecordDataset(["../data/tfrecords/" + name + ".tfrecords"])
+    raw_dataset = tf.data.TFRecordDataset(["/scratch/network/za1320/rawdataset/" + name + ".tfrecords"])
     center, rot_mat, _ = get_coordinate_system()
 
     feature_description = {
@@ -301,7 +301,7 @@ def init_scene(name, use_tx_array=True, tx_pattern="tr38901", rx_pattern="dipole
         Loaded scene
     """
     scene = load_scene(f"../scenes/{name}/{name}.xml")
-    scene.frequency = 3.438e9
+    scene.frequency = 3.438e9-256*50e6/1024
     scene.synthetic_array=False
 
     # Configure array

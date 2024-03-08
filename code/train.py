@@ -1,12 +1,14 @@
 import os
 import tensorflow as tf
 gpus = tf.config.list_physical_devices('GPU')
+print(gpus)
 if gpus:
     try:
         tf.config.experimental.set_memory_growth(gpus[0], True)
     except RuntimeError as e:
         print(e)
 tf.get_logger().setLevel('ERROR')
+tf.random.set_seed(42)
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -21,26 +23,27 @@ import datetime # For logging
 import json
 
 training_name = "neural_materials"
-dataset_name = '../data/traced_paths/dichasus-dc01'
+# dataset_name = '../data/traced_paths/dichasus-dc01'
+dataset_name = '/scratch/network/za1320/dataset/dichasus-dc01'
 dataset_filename = os.path.join(dataset_name + '.tfrecords')
 params_filename = os.path.join(dataset_name + '.json')
 
 # Configure training parameters and step
 batch_size = 4
 learning_rate = 1e-3
-num_iterations = 10
+num_iterations = 1000
 delta = 0.999 # Parameter for exponential moving average
 
 # Size of validation set size
 # The validation set is used for early stopping, to ensure
 # training does not overfit.
-validation_set_size = 80
+validation_set_size = 100
 # We don't use the test set here, but need is size for splitting
-test_set_size = 20
+test_set_size = 4900
 # Sizes of the positional encoding to evaluate
 position_encoding_size = 10
 # Sizes of the training set to evaluate
-training_set_size = 100
+training_set_size = 5000
 
 with open(params_filename, 'r') as openfile:
     params = json.load(openfile)
@@ -192,7 +195,7 @@ def train():
         loss_ds_pow, loss_ds, loss_pow, scaling_factor = tr_quantities
 
         # Logging
-        if (step % 1) == 0:
+        if (step % 10) == 0:
             with train_summary_writer.as_default():
                 # Log in TB
                 tf.summary.scalar('loss_ds_pow_training', loss_ds_pow.numpy(), step=step)
@@ -203,7 +206,7 @@ def train():
                 save_model(scene.radio_material_callable, weights_filename, scaling_factor=scaling_factor.numpy())
 
         # Evaluate periodically on the evaluation set
-        if ((step+1) % 10) == 0:
+        if ((step+1) % 1000) == 0:
             eval_loss_ds = 0.0
             eval_loss_pow = 0.0
             for _ in range(num_validation_iter):
@@ -234,6 +237,8 @@ def train():
 
     # Save model
     save_model(scene.radio_material_callable, weights_filename, scaling_factor=scaling_factor.numpy())
+    print("saved model")
 
 if __name__ == '__main__':
     train()
+    print("Training completed.")
