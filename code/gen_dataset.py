@@ -23,10 +23,10 @@ import argparse
 parser = argparse.ArgumentParser(description='Generate dataset of traced paths',
                                  formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 parser.add_argument('-gpu_num', type=int, help='Index of the GPU to use',
-                    default=0)
+                    default=1)
 #
 parser.add_argument('-seed', type=int, help='Tensorflow seed',
-                    default=1)
+                    default=42)
 #
 parser.add_argument('-meas_ds', type=str, help='Name of the dataset of measurements',
                     default="dichasus-dc01")
@@ -35,10 +35,10 @@ parser.add_argument('-scene_name', type=str, help='Sionna scene to use for ray t
                     default="inue_simple")
 #
 parser.add_argument('-num_samples', type=int, help='Number of samples used for tracing',
-                    default=int(1e3))
+                    default=int(1e4))
 #
 parser.add_argument('-max_depth', type=int, help='Maximum depth used for tracing',
-                    default=5)
+                    default=3)
 #
 parser.add_argument('-los', help='Enables LoS when tracing', default=True, action='store_true')
 parser.add_argument('-no-los', action='store_false', dest='los')
@@ -56,12 +56,12 @@ parser.add_argument('-scattering', help='Enables scattering when tracing', defau
 parser.add_argument('-no-scattering', action='store_false', dest='scattering')
 #
 parser.add_argument('-scat_keep_prob', type=float, help='Probability to keep a scattered paths when tracing',
-                    default=0.001)
+                    default=0.01)
 parser.add_argument('-traced_paths_dataset', type=str, help='(Required) Filename of the dataset of traced paths to create',
-                    required=True)
+                    default='dichasus-dc01', required=False)
 parser.add_argument('-traced_paths_dataset_size', type=int, help='(Required) Size of the dataset of traced paths',
-                    required=True)
-parser.add_argument('-delete_raw_dataset', help='Deletes the raw (unpost-processed) dataset', default=True, action='store_true')
+                    default=200, required=False)
+parser.add_argument('-delete_raw_dataset', help='Deletes the raw (unpost-processed) dataset', default=False, action='store_true')
 parser.add_argument('-keep_raw_dataset', action='store_false', dest='delete_raw_dataset')
 
 ## Parse arguments
@@ -106,9 +106,6 @@ traced_paths_dataset_folder = '../data/traced_paths'
 ###########################################
 
 import os
-
-os.environ["CUDA_VISIBLE_DEVICES"] = f"{gpu_num}"
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 import tensorflow as tf
 gpus = tf.config.list_physical_devices('GPU')
 if gpus:
@@ -126,7 +123,7 @@ sys.path.append('../../..')
 sys.path.append('../code')
 sys.path.append('../../sionna')
 
-# import sionna
+import sionna
 from utils import *
 import json
 from tqdm import tqdm
@@ -167,12 +164,12 @@ file_writer = tf.io.TFRecordWriter(traced_paths_raw_dataset_datafile)
 # Keep track of the max_num_paths
 max_num_paths_spec = -1
 max_num_paths_diff = -1
-max_num_paths_scat = -15
+max_num_paths_scat = -1
 max_num_paths_refract = -1
 # tqdm progress bar
 print(f"Generating the raw dataset of traced paths for {traced_paths_dataset}...")
 # for it_num in range(traced_paths_dataset_size):
-for it_num in tqdm(range(traced_paths_dataset_size), total=traced_paths_dataset_size):
+for it_num in tqdm(range(traced_paths_dataset_size)):
     # Retrieve the next item
     # `None` is returned if the iterator is exhausted
     next_item = next(data_iter, None)
@@ -195,15 +192,15 @@ for it_num in tqdm(range(traced_paths_dataset_size), total=traced_paths_dataset_
                                      edge_diffraction=edge_diffraction,
                                      scattering=scattering,
                                      scat_keep_prob=scat_keep_prob,
-                                     refraction = True,
+                                     refraction=False,
                                      check_scene=False)
 
     # Update max_num_paths
     num_paths_spec = traced_paths[0].objects.shape[-1]
     num_paths_diff = traced_paths[1].objects.shape[-1]
     num_paths_scat = traced_paths[2].objects.shape[-1]
-    num_paths_refract = traced_paths[6].objects.shape[-1]
-    print("refraction:", num_paths_refract)
+    # num_paths_refract = traced_paths[6].objects.shape[-1]
+    # print("refraction:", num_paths_refract)
 
     if num_paths_spec > max_num_paths_spec:
         max_num_paths_spec = num_paths_spec
@@ -211,8 +208,8 @@ for it_num in tqdm(range(traced_paths_dataset_size), total=traced_paths_dataset_
         max_num_paths_diff = num_paths_diff
     if num_paths_scat > max_num_paths_scat:
         max_num_paths_scat = num_paths_scat
-    if num_paths_refract > max_num_paths_refract:
-        max_num_paths_refract = num_paths_refract
+    # if num_paths_refract > max_num_paths_refract:
+    #     max_num_paths_refract = num_paths_refract
     # Reshape the channel measurement
     h_meas = reshape_h_meas(h_meas_raw)
 

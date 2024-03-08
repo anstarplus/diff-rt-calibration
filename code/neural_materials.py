@@ -206,4 +206,7 @@ class NeuralMaterials(Layer):
             s = tf.zeros_like(s)
             xpd = tf.zeros_like(xpd)
 
+        thickness = tf.zeros_like(s)
+        relative_permittivity_layer = tf.zeros_like(s)
+
         return eta, s, xpd

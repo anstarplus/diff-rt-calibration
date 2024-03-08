@@ -200,7 +200,7 @@ def detect_first_peak_2d_tensor(tensor):
     peak_indices = tf.argmax(peaks, output_type=tf.int32, axis=-1)
     return peak_indices
 
-def freq2time(h, l_min=-8, l_max=80, peak_aligned=False, sampling_rate=50e6):
+def freq2time(h, l_min=-8, l_max=80, peak_aligned=False, sampling_rate=50e6, nfft=1024):
     """Transforms channel frequency response to time response
 
     Input
@@ -232,8 +232,8 @@ def freq2time(h, l_min=-8, l_max=80, peak_aligned=False, sampling_rate=50e6):
     """
     # h_t = tf.signal.fftshift(tf.signal.ifft(h), axes=-1)
     h_t = tf.signal.fftshift(tf.signal.ifft(tf.signal.ifftshift(h, axes=-1)), axes=-1)
-    start = 512 + l_min
-    stop = 512 + l_max
+    start = nfft//2 + l_min
+    stop = nfft//2 + l_max
     h_t = h_t[...,start:stop]
 
     tap_ind = tf.range(l_min, l_max, dtype=tf.float32)
@@ -417,7 +417,7 @@ def total_power(h):
     """
     return tf.reduce_sum(tf.abs(h)**2, axis=-1)
 
-def delay_spread_loss(h_rt, h_meas, return_ds=False):
+def delay_spread_loss(h_rt, h_meas, return_ds=False, nfft=1024):
     """Computes the RMS delay spread for all examples and the loss based on
        the symmetric mean absolute percentage error (SMAPE)
 
@@ -445,10 +445,10 @@ def delay_spread_loss(h_rt, h_meas, return_ds=False):
         Average delay spread of the measured channels.
         Only returned if ``return_ds`` is `True`.
     """
-    h, t = freq2time(h_rt)
+    h, t = freq2time(h_rt, nfft=nfft)
     ds_rt = rms_delay_spread(h, t*1e9)
 
-    h, t = freq2time(h_meas)
+    h, t = freq2time(h_meas, nfft=nfft)
     ds_meas = rms_delay_spread(h, t*1e9)
 
     loss = tf.reduce_mean(tf.math.divide_no_nan(tf.abs(ds_rt-ds_meas),
@@ -1111,7 +1111,7 @@ def split_dataset(dataset, dataset_size, training_set_size, validation_set_size,
     # function leads to the same subsets to be created, assuming that the same
     # seed is used.
     tf.random.set_seed(42)
-    shuffled_dataset = dataset.shuffle(256, seed=shuffle_seed,
+    shuffled_dataset = dataset.shuffle(128, seed=shuffle_seed,
                                        reshuffle_each_iteration=False)
 
     training_set = shuffled_dataset.take(training_set_size)
